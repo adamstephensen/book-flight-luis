@@ -1,0 +1,151 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "0.1",
+  "name": "Flight Booker",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "BookFlight"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "City",
+      "children": [
+        "Origin",
+        "Destination"
+      ],
+      "roles": []
+    },
+    {
+      "name": "Class",
+      "children": [
+        "Business",
+        "First",
+        "Economy"
+      ],
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    },
+    {
+      "name": "number",
+      "roles": []
+    }
+  ],
+  "model_features": [
+    {
+      "name": "City",
+      "mode": true,
+      "words": "brisbane,melbourne,perth,sydney,canberra,adelaide,queensland,townsville,cairns,auckland,australia,wollongong,zealand,nsw,qld,tasmania,nz,australian,toronto,newcastle,christchurch,aust,ontario,wales,wellington,toowoomba,canada,ireland,singapore,vancouver,columbia,uk,dunedin,launceston,noosa,alberta,ottawa,calgary,edmonton,winnipeg,richmond,burlington,kansas,sacramento,minnesota,oklahoma,tucson,tulsa,seattle,nashville,columbus,cincinnati,albany,louisville,jacksonville,indianapolis,dallas,wichita,denver,minneapolis,arlington,albuquerque,boise,dayton,atlanta,akron,cleveland,pittsburgh,rochester,baltimore,knoxville,milwaukee,lexington,greensboro,wilmington,charleston,spokane,tampa,bellevue,huntsville,tallahassee,fayetteville,clarksville,memphis,raleigh,gainesville,lubbock,evansville,peoria,winston salem,waco,augusta,shreveport,chattanooga,lafayette,killeen,allentown,glendale,duluth,carrollton,san francisco,new york,las vegas,hong kong",
+      "activated": true
+    },
+    {
+      "name": "Class",
+      "mode": true,
+      "words": "first,business,economy,coach",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "book me 2 adult tickets in business class from sydney to auckland on 25 september 2018",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "Class::Business",
+          "startPos": 27,
+          "endPos": 40
+        },
+        {
+          "entity": "City::Origin",
+          "startPos": 47,
+          "endPos": 52
+        },
+        {
+          "entity": "City::Destination",
+          "startPos": 57,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "get me a plane ticket to london",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "City::Destination",
+          "startPos": 25,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "i need a flight sunday morning",
+      "intent": "BookFlight",
+      "entities": []
+    },
+    {
+      "text": "i want to book a flight",
+      "intent": "BookFlight",
+      "entities": []
+    },
+    {
+      "text": "i'd like plane ticket to san francisco",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "City::Destination",
+          "startPos": 25,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "show me economy flights to melbourne",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "Class::Economy",
+          "startPos": 8,
+          "endPos": 22
+        },
+        {
+          "entity": "City::Origin",
+          "startPos": 27,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "show me flights from sydney to rome this week",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "City::Origin",
+          "startPos": 21,
+          "endPos": 26
+        },
+        {
+          "entity": "City::Destination",
+          "startPos": 31,
+          "endPos": 34
+        }
+      ]
+    }
+  ]
+}
